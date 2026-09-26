@@ -1,0 +1,51 @@
+robot_name: "cobot_c1"
+comm_postfix: "sim"   # "sim" for MuJoCo simulation, "hw" for hardware
+pec_rate : 500
+fsm:
+  cobot_sleep:
+    q: [0.0,-0.032, 0.071, -0.039, 0, 0]
+  cobot_p2p:
+    q: [0.0,-0.032, 0.071, -0.039, 0, 0]
+  cobot_teleop:
+    q: [0.0,-0.032, 0.071, -0.039, 0, 0]
+
+controller:
+  joint_kp: [8, 8, 10, 8, 8, 8]
+  joint_kd: [0.5, 0.5, 0.75, 0.5, 0.5, 0.5]
+
+  use_cartesian_impedance: true
+
+  # [x, y, z, roll, pitch, yaw]
+  cart_k: [10, 10, 10, 8, 8, 8]
+  cart_d: [0.8, 0.8, 1, 0.8, 0.8, 0.8]
+
+
+  # extra safety clamp on ff torque output from controller
+  tau_limit: [11.0, 11.0, 22.0, 2.4, 2.4, 2.4]
+
+  # optional nullspace damping/stiffness (we can use in later step)
+  null_kp: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  null_kd: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+
+planner:
+  use_impedance_control: false
+  use_cubic_traj: true
+  max_joint_vel: [10, 10, 10, 10, 10, 10]
+
+estimator:
+  cutoff_freq_encoder_pos: 32
+  cutoff_freq_encoder_vel: 32
+  cutoff_freq_encoder_tau: 32
+  # EKF:
+  #   sigma_pz: 0.5
+  #   sigma_fz: 0.3
+  #   sigma_process: 0.1
+  #   sensor_noise_zfoot: 0.001
+  #   sensor_noise_pimu_rel_foot: 0.01
+  #   sensor_noise_vimu_rel_foot: 0.1
+  #   process_noise_pimu: 0.02
+  #   process_noise_vimu: 0.02
+  #   process_noise_pfoot: 0.02
+  #   base_vel_filter_cutoff: 40
+  #   plane_normal_filter_cutoff: 0.5

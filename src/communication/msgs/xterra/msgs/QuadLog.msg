@@ -1,0 +1,15 @@
+float32[4] contact_state
+float32[4] contact_prob
+float32[12] contact_force
+Point base_position
+Quaternion base_orientation
+Point linear_velocity
+Point angular_velocity
+float32[6] base_wrench
+float32[12] joint_position
+float32[12] joint_velocity
+float32[12] joint_torque
+Point foot_FL_position
+Point foot_FR_position
+Point foot_RL_position
+Point foot_RR_position

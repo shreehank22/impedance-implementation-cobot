@@ -1,0 +1,6 @@
+name: "Example config"
+controller:
+  joint_kp: [316, 316, 316]
+  joint_kd: [50, 50, 50]
+  base_kp: [0, 0, 50]
+  kase_kd: [10, 10, 50]

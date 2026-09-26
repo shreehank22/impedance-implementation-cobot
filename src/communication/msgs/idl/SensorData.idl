@@ -1,0 +1,11 @@
+module xterra {
+    module msg {
+        module dds_ {
+            struct SensorData_ {
+                float q[6];
+                float dq[6];
+                float tau[6];
+            };
+        };
+    };
+};

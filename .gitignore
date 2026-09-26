@@ -1,0 +1,12 @@
+*build/
+*custom/
+*src/third_party/*
+*.log*
+*logs/
+*.csv
+.coding-agent/
+.claude/settings.local.json
+.env
+.env.local
+*.pem
+*.key

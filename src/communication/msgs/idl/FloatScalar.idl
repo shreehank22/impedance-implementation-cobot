@@ -1,0 +1,10 @@
+module xterra {
+    module msg {
+        module dds_{
+            struct FloatScalar_ {
+                float data;
+            };
+        };
+    };
+};
+

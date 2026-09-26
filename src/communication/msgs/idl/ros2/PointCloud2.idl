@@ -1,0 +1,47 @@
+// generated from rosidl_generator_dds_idl/resource/idl.idl.em
+// with input from sensor_msgs:msg/PointCloud2.idl
+// generated code does not contain a copyright notice
+
+#include "PointField.idl"
+#include "Header.idl"
+
+#ifndef __sensor_msgs__msg__point_cloud2__idl__
+#define __sensor_msgs__msg__point_cloud2__idl__
+
+module sensor_msgs {
+
+module msg {
+
+module dds_ {
+
+
+struct PointCloud2_ {
+  // Message header (including time of sensor data acquisition, and the coordinate frame ID for 3d points).
+  std_msgs::msg::dds_::Header_ header;
+  
+  // 2D structure of the point cloud. 
+  // If the cloud is unordered, height is 1 and width is the length of the point cloud.
+  unsigned long height;
+  unsigned long width;
+  
+  // Describes the channels and their layout in the binary data blob.
+  sequence<sensor_msgs::msg::dds_::PointField_> fields;
+
+  // data
+  boolean is_bigendian;       // Is this data bigendian?
+  unsigned long point_step;   // Length of a point in bytes
+  unsigned long row_step;     // Length of a row in bytes
+  sequence<octet> data;       // Actual point data, size is (row_step*height)
+  boolean is_dense;           // True if there are no invalid points
+};
+
+
+};  // module dds_
+
+};  // module msg
+
+};  // module sensor_msgs
+
+
+#endif  // __sensor_msgs__msg__point_cloud2__idl__
+

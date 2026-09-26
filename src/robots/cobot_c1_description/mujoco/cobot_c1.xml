@@ -1,0 +1,197 @@
+<mujoco model="cobot_c1">
+  <!-- MuJoCo model for Cobot C1 - converted from URDF with STL meshes -->
+  <compiler angle="radian" meshdir="../meshes/" autolimits="true"/>
+
+  <option cone="elliptic" impratio="100" timestep="0.002" integrator="RK4">
+    <!-- Contact handling enabled for collisions -->
+  </option>
+
+  <!-- Lighting setup -->
+  <visual>
+    <!-- Reduced headlight - full lighting controlled by scene.xml -->
+    <headlight ambient="0.2 0.2 0.2" diffuse="0.3 0.3 0.3" specular="0.05 0.05 0.05"/>
+    <map znear="0.01" zfar="100"/>
+    <quality shadowsize="4096"/>
+  </visual>
+
+  <default>
+    <default class="cobot_c1">
+      <geom friction="0.6" margin="0.001"/>
+      <joint axis="0 1 0" damping="0.1" armature="0.01" frictionloss="0.2"/>
+      <motor ctrlrange="-11.9 11.9"/>
+    </default>
+  </default>
+
+  <asset>
+    <!-- Robot colors - all black -->
+    <material name="robot_black" rgba="0.1 0.1 0.1 1"/>
+    <material name="robot_dark" rgba="0.15 0.15 0.15 1"/>
+
+    <!-- Environment colors -->
+    <material name="floor" rgba="0.3 0.3 0.35 1"/>
+    <material name="wall_light" rgba="0.8 0.8 0.85 1"/>
+    <material name="wall_dark" rgba="0.2 0.2 0.25 1"/>
+
+    <!-- STL meshes from cobot_c1_description -->
+    <mesh name="base_mesh" file="base.STL"/>
+    <mesh name="shoulder_mesh" file="shoulder_link.STL"/>
+    <mesh name="arm_mesh" file="arm_link.STL"/>
+    <mesh name="forearm_mesh" file="forearm_link.STL"/>
+    <mesh name="wrist1_mesh" file="wrist1_link.STL"/>
+    <mesh name="wrist2_mesh" file="wrist2_link.STL"/>
+    <mesh name="finger_mesh" file="finger_link.STL"/>
+  </asset>
+
+  <worldbody>
+    <!-- Base link with STL mesh — placed directly on table surface (z=0.79) -->
+      <body name="base" pos="0.4 0 0.79" childclass="cobot_c1">
+        <!-- Inertia from URDF: mass=0.59348088 -->
+        <inertial pos="0.00001692 0.0 0.03585313" mass="0.59348088"
+                  diaginertia="0.00047512 0.00046328 0.00053658"/>
+
+        <!-- Visual + collision with STL mesh -->
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0"
+               material="robot_black" mesh="base_mesh"/>
+        <geom type="mesh" material="robot_black" mesh="base_mesh"/>
+
+        <!-- Shoulder link: Joint 1 (revolute around Z-axis) -->
+        <body name="shoulder_link" pos="0 0 0.0641">
+          <!-- Inertia from URDF: mass=1.12708012 -->
+          <inertial pos="-0.00128144 -0.00021021 0.04329984" mass="1.12708012"
+                    diaginertia="0.00255357 0.00091402 0.00253346"/>
+
+          <!-- Joint: shoulder_joint -->
+          <joint name="shoulder_joint" type="hinge" axis="0 0 1"
+                  range="-3.14159 3.14159" damping="0.1"/>
+
+          <!-- Visual + collision with STL mesh -->
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0"
+                 material="robot_black" mesh="shoulder_mesh"/>
+          <geom type="mesh" material="robot_black" mesh="shoulder_mesh"/>
+
+          <!-- Arm link: Joint 2 (revolute around Y-axis) -->
+          <body name="arm_link" pos="0 0 0.0449">
+            <!-- Inertia from URDF: mass=0.28145546 -->
+            <inertial pos="-0.12301012 0.00144929 -0.00171960" mass="0.28145546"
+                      diaginertia="8.813e-05 0.00290566 0.00287998"/>
+
+            <!-- Joint: arm_joint -->
+            <joint name="arm_joint" type="hinge" axis="0 -1 0"
+                    range="-3.14159 3.14159" damping="0.1"/>
+
+            <!-- Visual + collision with STL mesh -->
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0"
+                   material="robot_black" mesh="arm_mesh"/>
+            <geom type="mesh" material="robot_black" mesh="arm_mesh"/>
+
+            <!-- Forearm link: Joint 3 (revolute around Y-axis) -->
+            <body name="forearm_link" pos="-0.2915 0.0026 0">
+              <!-- Inertia from URDF: mass=0.34645163 -->
+              <inertial pos="0.14530329 -0.00149278 0.03689667" mass="0.34645163"
+                        diaginertia="0.00022469 0.00567816 0.00551438"/>
+
+              <!-- Joint: forearm_joint -->
+              <joint name="forearm_joint" type="hinge" axis="0 -1 0"
+                      range="-3.14159 3.14159" damping="0.1"/>
+
+              <!-- Visual + collision with STL mesh -->
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0"
+                     material="robot_black" mesh="forearm_mesh"/>
+              <geom type="mesh" material="robot_black" mesh="forearm_mesh"/>
+
+              <!-- Wrist1 link: Joint 4 (revolute around Y-axis) -->
+              <body name="wrist1_link" pos="0.3085 -0.0015 0.0537">
+                <!-- Inertia from URDF: mass=0.01376372 -->
+                <inertial pos="0.01731555 0.00017243 0.0" mass="0.01376372"
+                          diaginertia="7.42e-06 2.05e-06 8.54e-06"/>
+
+                <!-- Joint: wrist1_joint -->
+                <joint name="wrist1_joint" type="hinge" axis="0 -1 0"
+                        range="-3.14159 3.14159" damping="0.05"/>
+
+                <!-- Visual + collision with STL mesh -->
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0"
+                       material="robot_dark" mesh="wrist1_mesh"/>
+                <geom type="mesh" material="robot_dark" mesh="wrist1_mesh"/>
+
+                <!-- Wrist2 link: Joint 5 (revolute around X-axis with slight Y offset) -->
+                <body name="wrist2_link" pos="0.0268 -0.00025 0">
+                  <!-- Inertia from URDF: mass=0.21660033 -->
+                  <inertial pos="0.04998127 -0.00114500 -0.00893457" mass="0.21660033"
+                            diaginertia="7.296e-05 0.00026204 0.00025829"/>
+
+                  <!-- Joint: wrist2_joint (axis normalized from "1 -0.00030656 0") -->
+                  <joint name="wrist2_joint" type="hinge" axis="1 -0.00030656 0"
+                          range="-3.14159 3.14159" damping="0.05"/>
+
+                  <!-- Visual + collision with STL mesh -->
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0"
+                         material="robot_black" mesh="wrist2_mesh"/>
+                  <geom type="mesh" material="robot_black" mesh="wrist2_mesh"/>
+
+                  <!-- End-effector / Finger link: Joint 6 (revolute around Y-axis) -->
+                  <body name="finger_link" pos="0.0647 -0.00058 0">
+                    <!-- Inertia from URDF: mass=0.02665704 -->
+                    <inertial pos="0.04757438 -0.00059729 -0.00314905" mass="0.02665704"
+                              diaginertia="9.95e-06 2.787e-05 3.557e-05"/>
+
+                    <!-- Joint: finger_joint -->
+                    <joint name="finger_joint" type="hinge" axis="0 -1 0"
+                            range="-3.14159 3.14159" damping="0.05"/>
+
+                    <!-- Visual + collision with STL mesh -->
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0"
+                           material="robot_dark" mesh="finger_mesh"/>
+                    <geom type="mesh" material="robot_dark" mesh="finger_mesh"/>
+
+                    <!-- End-effector site -->
+                    <site name="ee_site" pos="0.05 0 0" size="0.01"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+  </worldbody>
+
+  <!-- Actuators for all 6 joints with higher control range for gravity compensation -->
+  <actuator>
+    <motor name="shoulder_motor" joint="shoulder_joint" gear="1" ctrlrange="-30 30" ctrllimited="true"/>
+    <motor name="arm_motor" joint="arm_joint" gear="1" ctrlrange="-30 30" ctrllimited="true"/>
+    <motor name="forearm_motor" joint="forearm_joint" gear="1" ctrlrange="-30 30" ctrllimited="true"/>
+    <motor name="wrist1_motor" joint="wrist1_joint" gear="1" ctrlrange="-30 30" ctrllimited="true"/>
+    <motor name="wrist2_motor" joint="wrist2_joint" gear="1" ctrlrange="-30 30" ctrllimited="true"/>
+    <motor name="finger_motor" joint="finger_joint" gear="1" ctrlrange="-30 30" ctrllimited="true"/>
+  </actuator>
+
+  <!-- Sensors for feedback -->
+  <sensor>
+    <!-- Joint position sensors -->
+    <jointpos joint="shoulder_joint" name="shoulder_pos"/>
+    <jointpos joint="arm_joint" name="arm_pos"/>
+    <jointpos joint="forearm_joint" name="forearm_pos"/>
+    <jointpos joint="wrist1_joint" name="wrist1_pos"/>
+    <jointpos joint="wrist2_joint" name="wrist2_pos"/>
+    <jointpos joint="finger_joint" name="finger_pos"/>
+
+    <!-- Joint velocity sensors -->
+    <jointvel joint="shoulder_joint" name="shoulder_vel"/>
+    <jointvel joint="arm_joint" name="arm_vel"/>
+    <jointvel joint="forearm_joint" name="forearm_vel"/>
+    <jointvel joint="wrist1_joint" name="wrist1_vel"/>
+    <jointvel joint="wrist2_joint" name="wrist2_vel"/>
+    <jointvel joint="finger_joint" name="finger_vel"/>
+  </sensor>
+
+  <!-- Keyframes: home position (all joints zeroed) and ready position (half-extended) -->
+  <keyframe>
+    <!-- Home: all joints at zero -->
+    <key name="home" qpos="0 0 0 0 0 0"
+         ctrl="0 0 0 0 0 0"/>
+
+    <!-- Ready: arm slightly extended (good for visualization) -->
+    <key name="ready" qpos="0 -0.5 0.5 0 0 0"
+         ctrl="0 -0.5 0.5 0 0 0"/>
+  </keyframe>
+</mujoco>

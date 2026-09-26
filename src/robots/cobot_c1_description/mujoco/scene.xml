@@ -1,0 +1,65 @@
+<mujoco model="cobot_c1 workspace scene">
+  <include file="cobot_c1.xml"/>
+
+  <!-- Scene statistics and camera setup -->
+  <statistic center="0.2 0 0.5" extent="1.2"/>
+
+  <visual>
+    <!-- Lighting configuration - reduced brightness for better visibility -->
+    <headlight diffuse="0.4 0.4 0.4" ambient="0.2 0.2 0.2" specular="0.05 0.05 0.05"/>
+    <!-- Sky gradient background -->
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <!-- Default camera view (top-front, side angle) -->
+    <global azimuth="120" elevation="-25"/>
+  </visual>
+
+  <asset>
+    <!-- Skybox gradient background - LAIR style -->
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0"
+             width="512" height="3072"/>
+
+    <!-- Ground checker texture - LAIR style (dark blue-gray tones) -->
+    <texture type="2d" name="floor_checker" builtin="checker" mark="edge"
+             rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+             markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="floor_checker" texture="floor_checker" texuniform="true"
+              texrepeat="5 5" reflectance="0.2"/>
+
+    <!-- Wood texture for table top (warm wood tone) -->
+    <texture type="2d" name="wood_table" builtin="flat" mark="edge"
+             rgb1="0.7 0.5 0.3" rgb2="0.6 0.4 0.2" width="300" height="300"/>
+    <material name="wood_table" texture="wood_table" texuniform="true"
+              texrepeat="8 8" reflectance="0.2"/>
+
+    <!-- Dark material for table legs and frame -->
+    <material name="table_frame" rgba="0.15 0.15 0.15 1" reflectance="0.05"/>
+  </asset>
+
+  <worldbody>
+    <!-- Ground floor with checker pattern -->
+    <geom name="floor_plane" size="5 5 0.05" type="plane" material="floor_checker"
+          pos="0 0 -0.05"/>
+
+    <!-- Main directional light from above - reduced intensity -->
+    <light name="overhead" pos="0.5 0 2.5" dir="0 0 -1" directional="true"
+            ambient="0.35 0.35 0.35" diffuse="0.5 0.5 0.5" specular="0.05 0.05 0.05"/>
+
+    <body name="work_table" pos="0.4 0 0">
+      <inertial pos="0 0 0.375" mass="20.0" diaginertia="3.0 4.0 2.5"/>
+      <geom name="table_top" type="box" pos="0 0 0.75" size="0.6 0.4 0.04"
+            material="wood_table" friction="0.5"/>
+      <geom name="table_leg_fl" type="cylinder" pos="-0.55 -0.35 0.375"
+            size="0.035 0.375" material="table_frame" friction="0.6"/>
+      <geom name="table_leg_fr" type="cylinder" pos="-0.55 0.35 0.375"
+            size="0.035 0.375" material="table_frame" friction="0.6"/>
+      <geom name="table_leg_bl" type="cylinder" pos="0.55 -0.35 0.375"
+            size="0.035 0.375" material="table_frame" friction="0.6"/>
+      <geom name="table_leg_br" type="cylinder" pos="0.55 0.35 0.375"
+            size="0.035 0.375" material="table_frame" friction="0.6"/>
+      <geom name="table_rail_left" type="cylinder" pos="0 -0.35 0.375"
+            size="0.02 0.575" euler="0 1.5708 0" material="table_frame" friction="0.4"/>
+      <geom name="table_rail_right" type="cylinder" pos="0 0.35 0.375"
+            size="0.02 0.575" euler="0 1.5708 0" material="table_frame" friction="0.4"/>
+    </body>
+  </worldbody>
+</mujoco>

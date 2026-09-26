@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -O3  -rdynamic CMakeFiles/Ping.dir/Ping.cpp.o  -o Ping   -L/home/quadrpi/dev/MRL/AIR/src/hardware/src/SCServo_Linux/examples/SMS_STS/Ping/../../..  -Wl,-rpath,/home/quadrpi/dev/MRL/AIR/src/hardware/src/SCServo_Linux/examples/SMS_STS/Ping/../../.. -Wl,-Bstatic -lSCServo -Wl,-Bdynamic 

@@ -1,0 +1,13 @@
+module xterra {
+    module msg {
+        module dds_ {
+            struct CliData_ {
+                float x[6];
+                double duration;
+                long mode;
+            };
+        };
+    };
+};
+
+

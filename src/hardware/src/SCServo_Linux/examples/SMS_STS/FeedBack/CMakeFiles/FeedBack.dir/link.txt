@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -O3  -rdynamic CMakeFiles/FeedBack.dir/FeedBack.cpp.o  -o FeedBack   -L/home/quadrpi/dev/MRL/AIR/src/hardware/src/SCServo_Linux/examples/SMS_STS/FeedBack/../../..  -Wl,-rpath,/home/quadrpi/dev/MRL/AIR/src/hardware/src/SCServo_Linux/examples/SMS_STS/FeedBack/../../.. -Wl,-Bstatic -lSCServo -Wl,-Bdynamic 

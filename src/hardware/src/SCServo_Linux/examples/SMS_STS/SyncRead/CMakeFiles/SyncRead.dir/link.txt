@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -O3  -rdynamic CMakeFiles/SyncRead.dir/SyncRead.cpp.o  -o SyncRead   -L/home/quadrpi/dev/MRL/AIR/src/hardware/src/SCServo_Linux/examples/SMS_STS/SyncRead/../../..  -Wl,-rpath,/home/quadrpi/dev/MRL/AIR/src/hardware/src/SCServo_Linux/examples/SMS_STS/SyncRead/../../.. -Wl,-Bstatic -lSCServo -Wl,-Bdynamic 

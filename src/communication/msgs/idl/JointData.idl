@@ -1,0 +1,13 @@
+module xterra {
+    module msg {
+        module dds_ {
+            struct JointData_ {
+                float q[6];
+                float dq[6];
+                float tau[6];
+                float kp[6];
+                float kd[6];
+            };
+        };
+    };
+};

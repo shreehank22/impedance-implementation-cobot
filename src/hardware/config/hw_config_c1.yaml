@@ -1,0 +1,12 @@
+robot: "cobot_c1"
+sleep_pos_rev: [0.001, -0.001, 0.001]
+sleep_pos_joint: [0.001,-0.001, 0.001]
+gear_ratio: [8, 8, 16]
+pos_min: [-2, 0.001 , 0.025]
+pos_max: [2, 4.51, 10.10]
+max_torque: 0.5
+max_velocity: 10.0
+hfe_kfe_trans: 0.5
+joint_alpha: 0.5
+joint_dir: [-1, -1, 1]
+remap_index: [0, 1, 2]

@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+ <tabbed_widget name="Main Window" parent="main_window">
+  <Tab containers="1" tab_name="tab1">
+   <Container>
+    <DockSplitter count="3" orientation="-" sizes="0.334064;0.331873;0.334064">
+     <DockSplitter count="3" orientation="|" sizes="0.333544;0.332912;0.333544">
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-0.785738" top="1.683637" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/foot_position.0" color="#17becf"/>
+        <curve name="/go2/estimated/foot_position.0" color="#f14cc1"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-1.157837" top="1.201792" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/foot_velocity.0" color="#d62728"/>
+        <curve name="/go2/estimated/foot_velocity.0" color="#bcbd22"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-26.616945" top="15.813482" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/estimated/contact_force.0" color="#17becf"/>
+        <curve name="/go2/reference/contact_force.0" color="#d62728"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter count="3" orientation="|" sizes="0.333544;0.332912;0.333544">
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-3.827376" top="0.987748" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/foot_position.1" color="#bcbd22"/>
+        <curve name="/go2/estimated/foot_position.1" color="#9467bd"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-1.267929" top="2.639510" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/foot_velocity.1" color="#1ac938"/>
+        <curve name="/go2/estimated/foot_velocity.1" color="#1f77b4"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-50.908925" top="25.253295" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/estimated/contact_force.1" color="#bcbd22"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter count="3" orientation="|" sizes="0.333544;0.332912;0.333544">
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-3.507301" top="0.187983" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/foot_position.2" color="#1f77b4"/>
+        <curve name="/go2/estimated/foot_position.2" color="#17becf"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-6.580544" top="1.658111" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/foot_velocity.2" color="#ff7f0e"/>
+        <curve name="/go2/estimated/foot_velocity.2" color="#d62728"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-10.401778" top="93.538536" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/estimated/contact_force.2" color="#1f77b4"/>
+        <curve name="/go2/reference/contact_force.2" color="#1ac938"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="tab2">
+   <Container>
+    <DockSplitter count="3" orientation="-" sizes="0.332968;0.334064;0.332968">
+     <DockSplitter count="3" orientation="|" sizes="0.333544;0.332912;0.333544">
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-0.282932" top="0.403156" right="13446.260645" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/linear_velocity/x" color="#1f77b4"/>
+        <curve name="/go2/estimated/linear_velocity/x" color="#ff7f0e"/>
+        <curve name="/go2/gt_data/linear_velocity/x" color="#bcbd22"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-0.955001" top="0.808088" right="13446.260645" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/angular_velocity/x" color="#1f77b4"/>
+        <curve name="/go2/estimated/angular_velocity/x" color="#ff7f0e"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-0.761805" top="3.892884" right="13446.260645" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/base_position/x" color="#1ac938"/>
+        <curve name="/go2/gt_data/base_position/x" color="#9467bd"/>
+        <curve name="/go2/estimated/base_position/x" color="#1ac938"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter count="3" orientation="|" sizes="0.333544;0.332912;0.333544">
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-0.145907" top="1.143966" right="13446.260645" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/linear_velocity/y" color="#d62728"/>
+        <curve name="/go2/estimated/linear_velocity/y" color="#f14cc1"/>
+        <curve name="/go2/gt_data/linear_velocity/y" color="#1f77b4"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-1.131824" top="0.926826" right="13446.260645" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/angular_velocity/y" color="#d62728"/>
+        <curve name="/go2/estimated/angular_velocity/y" color="#f14cc1"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-3.996246" top="1.004535" right="13446.260645" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/base_position/y" color="#ff7f0e"/>
+        <curve name="/go2/gt_data/base_position/y" color="#17becf"/>
+        <curve name="/go2/estimated/base_position/y" color="#d62728"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter count="3" orientation="|" sizes="0.333544;0.332912;0.333544">
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-9.396572" top="1.010204" right="13446.260645" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/linear_velocity/z" color="#1ac938"/>
+        <curve name="/go2/estimated/linear_velocity/z" color="#9467bd"/>
+        <curve name="/go2/gt_data/linear_velocity/z" color="#d62728"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-1.378563" top="0.393738" right="13446.260645" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/angular_velocity/z" color="#1ac938"/>
+        <curve name="/go2/estimated/angular_velocity/z" color="#9467bd"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-3.276809" top="0.440643" right="13446.260645" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/base_position/z" color="#f14cc1"/>
+        <curve name="/go2/gt_data/base_position/z" color="#bcbd22"/>
+        <curve name="/go2/estimated/base_position/z" color="#1f77b4"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="tab3">
+   <Container>
+    <DockSplitter count="3" orientation="-" sizes="0.332968;0.334064;0.332968">
+     <DockSplitter count="2" orientation="|" sizes="0.5;0.5">
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-5.250000" top="5.250000" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/base_wrench.0" color="#ff7f0e"/>
+        <curve name="/go2/estimated/base_wrench.0" color="#d62728"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-2.562576" top="6.328311" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/base_wrench.3" color="#17becf"/>
+        <curve name="/go2/estimated/base_wrench.3" color="#f14cc1"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter count="2" orientation="|" sizes="0.5;0.5">
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-5.250000" top="5.250000" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/base_wrench.1" color="#f14cc1"/>
+        <curve name="/go2/estimated/base_wrench.1" color="#1ac938"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-26.221093" top="26.249295" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/base_wrench.4" color="#bcbd22"/>
+        <curve name="/go2/estimated/base_wrench.4" color="#9467bd"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter count="2" orientation="|" sizes="0.5;0.5">
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-3.750000" top="153.750000" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/base_wrench.2" color="#9467bd"/>
+        <curve name="/go2/estimated/base_wrench.2" color="#ff7f0e"/>
+       </plot>
+      </DockArea>
+      <DockArea name="...">
+       <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+        <range bottom="-8.501670" top="3.249364" right="13444.963496" left="13434.963141"/>
+        <limitY/>
+        <curve name="/go2/reference/base_wrench.5" color="#1f77b4"/>
+        <curve name="/go2/estimated/base_wrench.5" color="#17becf"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab containers="1" tab_name="tab2">
+   <Container>
+    <DockSplitter count="1" orientation="-" sizes="1">
+     <DockArea name="...">
+      <plot flip_y="false" style="Lines" mode="TimeSeries" flip_x="false">
+       <range bottom="-10.401778" top="93.538536" right="13444.963496" left="13434.963141"/>
+       <limitY/>
+       <curve name="/go2/estimated/contact_force.2" color="#1f77b4"/>
+       <curve name="/go2/reference/contact_force.2" color="#1ac938"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <currentTabIndex index="3"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="1"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <Plugins>
+  <plugin ID="DataLoad CSV">
+   <default delimiter="0" time_axis=""/>
+  </plugin>
+  <plugin ID="DataLoad MCAP"/>
+  <plugin ID="DataLoad ROS2 bags">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+  </plugin>
+  <plugin ID="DataLoad ULog"/>
+  <plugin ID="ROS2 Topic Subscriber">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+  </plugin>
+  <plugin ID="UDP Server"/>
+  <plugin ID="WebSocket Server"/>
+  <plugin ID="ZMQ Subscriber"/>
+  <plugin ID="Fast Fourier Transform"/>
+  <plugin ID="Quaternion to RPY"/>
+  <plugin ID="Reactive Script Editor">
+   <library code="--[[ Helper function to create a series from arrays&#xa;&#xa; new_series: a series previously created with ScatterXY.new(name)&#xa; prefix:     prefix of the timeseries, before the index of the array&#xa; suffix_X:   suffix to complete the name of the series containing the X value. If [nil], use the index of the array.&#xa; suffix_Y:   suffix to complete the name of the series containing the Y value&#xa; timestamp:   usually the tracker_time variable&#xa;              &#xa; Example:&#xa; &#xa; Assuming we have multiple series in the form:&#xa; &#xa;   /trajectory/node.{X}/position/x&#xa;   /trajectory/node.{X}/position/y&#xa;   &#xa; where {N} is the index of the array (integer). We can create a reactive series from the array with:&#xa; &#xa;   new_series = ScatterXY.new(&quot;my_trajectory&quot;) &#xa;   CreateSeriesFromArray( new_series, &quot;/trajectory/node&quot;, &quot;position/x&quot;, &quot;position/y&quot;, tracker_time );&#xa;--]]&#xa;&#xa;function CreateSeriesFromArray( new_series, prefix, suffix_X, suffix_Y, timestamp )&#xa;  &#xa;  --- clear previous values&#xa;  new_series:clear()&#xa;  &#xa;  --- Append points to new_series&#xa;  index = 0&#xa;  while(true) do&#xa;&#xa;    x = index;&#xa;    -- if not nil, get the X coordinate from a series&#xa;    if suffix_X ~= nil then &#xa;      series_x = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_X) )&#xa;      if series_x == nil then break end&#xa;      x = series_x:atTime(timestamp)&#x9; &#xa;    end&#xa;    &#xa;    series_y = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_Y) )&#xa;    if series_y == nil then break end &#xa;    y = series_y:atTime(timestamp)&#xa;    &#xa;    new_series:push_back(x,y)&#xa;    index = index+1&#xa;  end&#xa;end&#xa;&#xa;--[[ Similar to the built-in function GetSeriesNames(), but select only the names with a give prefix. --]]&#xa;&#xa;function GetSeriesNamesByPrefix(prefix)&#xa;  -- GetSeriesNames(9 is a built-in function&#xa;  all_names = GetSeriesNames()&#xa;  filtered_names = {}&#xa;  for i, name in ipairs(all_names)  do&#xa;    -- check the prefix&#xa;    if name:find(prefix, 1, #prefix) then&#xa;      table.insert(filtered_names, name);&#xa;    end&#xa;  end&#xa;  return filtered_names&#xa;end&#xa;&#xa;--[[ Modify an existing series, applying offsets to all their X and Y values&#xa;&#xa; series: an existing timeseries, obtained with TimeseriesView.find(name)&#xa; delta_x: offset to apply to each x value&#xa; delta_y: offset to apply to each y value &#xa;  &#xa;--]]&#xa;&#xa;function ApplyOffsetInPlace(series, delta_x, delta_y)&#xa;  -- use C++ indeces, not Lua indeces&#xa;  for index=0, series:size()-1 do&#xa;    x,y = series:at(index)&#xa;    series:set(index, x + delta_x, y + delta_y)&#xa;  end&#xa;end&#xa;"/>
+   <scripts/>
+  </plugin>
+  <plugin ID="CSV Exporter"/>
+  <plugin ID="ROS2 Topic Re-Publisher"/>
+ </Plugins>
+ <!-- - - - - - - - - - - - - - - -->
+ <previouslyLoaded_Datafiles/>
+ <previouslyLoaded_Streamer name="ROS2 Topic Subscriber"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <customMathEquations/>
+ <snippets/>
+ <!-- - - - - - - - - - - - - - - -->
+</root>
+

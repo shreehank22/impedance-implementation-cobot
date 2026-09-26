@@ -1,0 +1,14 @@
+module xterra {
+    module msg {
+        module dds_ {
+            struct SolverStats_ {
+                uint16 iters;
+                uint16 max_iters;
+                float residual[6];
+                float constraint_violation[4];
+                float time_ms;
+            };
+        };
+    };
+};
+
