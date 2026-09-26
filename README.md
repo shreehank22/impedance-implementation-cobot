@@ -1,14 +1,14 @@
-# RIMaR — Robotic Intelligent Manipulation Repository (MRL-IITK)
+# Impedance Implementation Cobot
 
-6-DOF cobot simulation and execution stack using MuJoCo + CycloneDDS.
+6-DOF cobot simulation and execution stack with impedance control, using MuJoCo + CycloneDDS.
 
 ---
 
 ## 1. Clone the Repository
 
 ```bash
-git clone --recursive git@github.com:mrl-iitk/RIMaR.git
-cd RIMaR
+git clone --recursive git@github.com:shreehank22/impedance-implementation-cobot.git
+cd impedance-implementation-cobot
 ```
 
 ---
@@ -92,8 +92,8 @@ to joint commands on `rt/cobot_c1/sim/joint_command`.
 
 ### Terminal 2 — Executor
 
-Runs the FSM, planner, estimator, and controller. Reads config from
-`src/execution/config/config_c1.yaml`.
+Runs the FSM, planner, estimator, and controller (including the impedance
+control law). Reads config from `src/execution/config/config_c1.yaml`.
 
 Must be launched from `custom/install/` (two levels below project root):
 
@@ -211,7 +211,7 @@ Replace `sim` with `hw` for hardware mode.
 ## 7. Project Structure
 
 ```
-RIMaR/
+impedance-implementation-cobot/
 ├── compile.sh                  — build script
 ├── setup_libraries.sh          — third-party library setup
 ├── custom/install/             — compiled binaries and libraries
@@ -222,7 +222,7 @@ RIMaR/
 ├── src/
 │   ├── communication/          — DDS layer (QuadDDSComm, keyboard, P2P interfaces)
 │   ├── dynamics/               — Cobot kinematics (FK, IK, Jacobian, isReachable)
-│   ├── execution/              — FSM, Planner, Controller, Estimator
+│   ├── execution/              — FSM, Planner, Controller (impedance control), Estimator
 │   │   └── config/config_c1.yaml
 │   ├── robot_simulation/       — simulate_pv MuJoCo simulation
 │   └── robots/cobot_c1_description/
